@@ -1,0 +1,14 @@
+.MyDiv{
+    display: block;
+    margin-left: auto;
+  margin-right: auto;
+}
+
+.card
+{
+  margin: 20px 20px;
+  background-color:olive;
+  
+  border-radius: 2%;
+  float: left;
+}
