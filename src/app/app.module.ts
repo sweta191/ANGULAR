@@ -13,6 +13,8 @@ import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-edit.component';
 import { DropdownDirective } from './shared/dropdown.directive';
 import { HomeComponent } from './home/home.component';
+import { SearchComponent } from './search/search.component';
+import { CardComponent } from './card/card.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { HomeComponent } from './home/home.component';
     ShoppingListComponent,
     ShoppingEditComponent,
     DropdownDirective,
-    HomeComponent
+    HomeComponent,
+    SearchComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule,

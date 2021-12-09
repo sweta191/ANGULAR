@@ -6,47 +6,39 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  name:any;
-  name_sweta:any;
-  name_austin:any;
-  name_john:any;
   constructor() { }
 
   ngOnInit(): void {
   }
-  call($event:any)
+  list=["Grapes","Oranges","banana","guava"];
+  show_cards:any;
+  not_found="false";
+  show:any;
+  
+  searchItem(value:any)
   {
-    this.name=$event.target.value;
-    console.log("the event value is",this.name);
-    if(this.name!=" ")
+    this.show_cards=[];
+    for(let i=0;i<this.list.length;i++)
     {
-          if(this.name == "sweta")
-          {
-            this.name_sweta="true";
-            
-          }
-
-          else if(this.name =="john")
-          {
-            this.name_john="true";
-          }
-
-          else
-          {
-            this.name_austin="true";
-          }   
-
+        if(value!="" && this.list[i]==value)
+        {
+          this.show="true";
+          this.show_cards.push(this.list[i]);
+          break;
+        }
+        else
+        {
+          this.show="false";
+          this.not_found="true"
+        }
+      
+       
     }
-    else
-    {
-      console.log("in the else part",this.name_austin);
-        this.name_sweta="false";
-        this.name_john="false";
-        this.name_austin="false";
-    }
-    
-    
 
+    console.log("show cards are",this.show_cards);
+    
+    console.log("In the parent component",value);
+    
   }
-
+  
 }
