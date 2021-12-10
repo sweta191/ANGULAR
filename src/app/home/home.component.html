@@ -1,6 +1,7 @@
 
 <app-search (searchInput)='searchItem($event)'></app-search>
-<app-card *ngIf="show" [list]="show_cards"></app-card>
-<div *ngIf="not_found=='true'">
+
+<app-card  [list]="val!=''?show_cards:list"></app-card>
+<div *ngIf="not_found">
   <p>Not found</p>
 </div>

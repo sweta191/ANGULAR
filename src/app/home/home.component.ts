@@ -12,11 +12,14 @@ export class HomeComponent implements OnInit {
   }
   list=["Grapes","Oranges","banana","guava"];
   show_cards:any;
-  not_found="false";
+  not_found=false;
   show:any;
+  val="";
   
   searchItem(value:any)
   {
+    this.val=value;
+
     this.show_cards=[];
     for(let i=0;i<this.list.length;i++)
     {
@@ -25,16 +28,16 @@ export class HomeComponent implements OnInit {
           this.show="true";
           this.show_cards.push(this.list[i]);
           break;
+          
         }
         else
         {
-          this.show="false";
-          this.not_found="true"
+          //this.show="false";
+          //this.show_cards=["Grapes","Oranges","banana","guava"]
         }
       
        
     }
-
     console.log("show cards are",this.show_cards);
     
     console.log("In the parent component",value);
