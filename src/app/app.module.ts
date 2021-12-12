@@ -15,6 +15,7 @@ import { DropdownDirective } from './shared/dropdown.directive';
 import { HomeComponent } from './home/home.component';
 import { SearchComponent } from './search/search.component';
 import { CardComponent } from './card/card.component';
+import { CapitalPipe } from './shared/capital.pipe';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { CardComponent } from './card/card.component';
     DropdownDirective,
     HomeComponent,
     SearchComponent,
-    CardComponent
+    CardComponent,
+    CapitalPipe
   ],
   imports: [
     BrowserModule,

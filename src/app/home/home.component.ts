@@ -21,23 +21,23 @@ export class HomeComponent implements OnInit {
     this.val=value;
 
     this.show_cards=[];
-    for(let i=0;i<this.list.length;i++)
-    {
-        if(value!="" && this.list[i]==value)
-        {
-          this.show="true";
-          this.show_cards.push(this.list[i]);
-          break;
+    // for(let i=0;i<this.list.length;i++)
+    // {
+    //     if(value!="" && this.list[i]==value)
+    //     {
+    //       this.show="true";
+    //       this.show_cards.push(this.list[i]);
+    //       break;
           
-        }
-        else
-        {
-          //this.show="false";
-          //this.show_cards=["Grapes","Oranges","banana","guava"]
-        }
+    //     }
+    //     else
+    //     {
+          
+    //     }
       
        
-    }
+    // }
+    this.show_cards = this.list.filter(val => val.toLowerCase().includes(value && value.toLowerCase()))
     console.log("show cards are",this.show_cards);
     
     console.log("In the parent component",value);

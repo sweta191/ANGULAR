@@ -1,5 +1,4 @@
 import { Component, Input, OnInit } from '@angular/core';
-
 @Component({
   selector: 'app-card',
   templateUrl: './card.component.html',
@@ -11,6 +10,6 @@ export class CardComponent implements OnInit {
   @Input() list:any;
   ngOnInit(): void {
   }
-  
+  summary:string="some example text some example text. Jane Doe is an architect and engineer"
   
 }
