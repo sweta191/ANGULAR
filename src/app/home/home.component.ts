@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CartServiceService } from '../shared/cart-service.service';
 
 @Component({
   selector: 'app-home',
@@ -6,42 +7,37 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  constructor() { }
-
+  constructor(private cart:CartServiceService) { }
+  count:any;
   ngOnInit(): void {
+    this.cart.count.subscribe((c)=>
+    {
+      this.count=c;
+
+    })
   }
-  list=["Grapes","Oranges","banana","guava"];
-  show_cards:any;
-  not_found=false;
-  show:any;
-  val="";
   
+  list:Array<string>=["Grapes","Oranges","banana","guava"];
+  show_cards:Array<string>=[];
+  not_found:Boolean=false;
+  val:string="";
+  show_error:Boolean=false;
   searchItem(value:any)
   {
     this.val=value;
+    this.show_cards = this.list.filter(val => val.toLowerCase().includes(value && value.toLowerCase()));
+    if(this.show_cards.length==0)
+    {
+      console.log("empty");
+      this.show_error=true;
 
-    this.show_cards=[];
-    // for(let i=0;i<this.list.length;i++)
-    // {
-    //     if(value!="" && this.list[i]==value)
-    //     {
-    //       this.show="true";
-    //       this.show_cards.push(this.list[i]);
-    //       break;
-          
-    //     }
-    //     else
-    //     {
-          
-    //     }
-      
-       
-    // }
-    this.show_cards = this.list.filter(val => val.toLowerCase().includes(value && value.toLowerCase()))
-    console.log("show cards are",this.show_cards);
-    
-    console.log("In the parent component",value);
+    }
+    else
+    {
+       this.show_error=false;
+    }
     
   }
+
   
 }

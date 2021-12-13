@@ -1,7 +1,7 @@
 
 <app-search (searchInput)='searchItem($event)'></app-search>
-
+<div>car{{count}}</div>
 <app-card  [list]="val!=''?show_cards:list"></app-card>
-<div *ngIf="not_found">
+<div *ngIf="show_error">
   <p>Not found</p>
 </div>
