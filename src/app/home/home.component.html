@@ -1,6 +1,6 @@
 
 <app-search (searchInput)='searchItem($event)'></app-search>
-<div>car{{count}}</div>
+<mat-icon [matBadge]="count">shopping_cart</mat-icon>
 <app-card  [list]="val!=''?show_cards:list"></app-card>
 <div *ngIf="show_error">
   <p>Not found</p>
