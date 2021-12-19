@@ -20,6 +20,9 @@ import { CardComponent } from './card/card.component';
 import { CapitalPipe } from './shared/capital.pipe';
 import { CartComponent } from './cart/cart.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { AppRoutingModule } from './app-routing.module';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -37,16 +40,19 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     CardComponent,
     CapitalPipe,
     CartComponent,
+    DashboardComponent,
     
   ],
   imports: [
     BrowserModule,
+    AppRoutingModule,
     FormsModule,
     BrowserAnimationsModule,
     MatButtonModule,
     MatCardModule,
     MatIconModule,
-    MatBadgeModule
+    MatBadgeModule,
+    MatFormFieldModule
   ],
   providers: [],
   bootstrap: [AppComponent]
